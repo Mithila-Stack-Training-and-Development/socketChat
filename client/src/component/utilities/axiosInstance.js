@@ -1,6 +1,6 @@
 
 import axios from "axios"
-const DB_URL=import.meta.env.VITE_DB_URL;
+const DB_URL="https://socketchat-lnrb.onrender.com/api/v1";
 
 export const axiosInstance = axios.create({
     baseURL: DB_URL,

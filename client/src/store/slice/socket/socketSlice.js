@@ -12,7 +12,7 @@ export const socketSlice = createSlice({
   reducers: {
     initializeSocket: (state, action) => {
        
-      const socket = io(import.meta.env.VITE_DB_ORIGIN, {
+      const socket = io("https://socketchat-lnrb.onrender.com", {
         query: {
           userId: action.payload,
         },
