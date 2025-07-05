@@ -87,7 +87,7 @@ server/
 ├── index.js               # 🧠 Entry point: sets up Express, MongoDB, and Socket.IO
 └── .env                   # 🔒 Environment variables (Mongo URI, JWT secret, etc.)
 
----
+```
 
 ## 🖼️ Frontend Project Structure (`/client/src`)
 
@@ -128,7 +128,7 @@ client/
     │
     ├── App.js                      # Route management
     └── index.js                    # Entry point – ReactDOM, Redux Provider
----
+```
 
 ---
 ## 🛠️ Deployment on Render
@@ -251,7 +251,7 @@ cd server
 
 # Start server (dev mode)
 npm run dev
-
+```
 ## 👨‍💻 Author
 
 **Ankit — B.Tech CSE, 3rd Year**
