@@ -4,16 +4,12 @@ import { Server } from "socket.io";
 import http from "http";
 import express from "express";
 
-
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
-    cors: {
-      origin: process.env.CLIENT_URL,
-    },
+    cors: {origin: "https://socketchat-3qjd.onrender.com/"},
   });
-
-
+//fixed the CORS error by adding the origin as a string
   //userid <-> socketId (because each id is unique for a user)
   const userSocketmap={}
   io.on("connection", (socket) => {
