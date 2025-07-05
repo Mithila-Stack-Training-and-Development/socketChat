@@ -1,6 +1,6 @@
 import React from 'react'
 import MessageContainer from './MessageContainer.jsx'
-import UserSidebar from './userSidebar.jsx'
+import UserSidebar from './UserSidebar.jsx'
 import { useDispatch,useSelector } from 'react-redux';
 import { initializeSocket ,setOnlineUsers} from '../../store/slice/socket/socketSlice.js';
 import {setNewMessage}  from '../../store/slice/message/messageSlice.js';
