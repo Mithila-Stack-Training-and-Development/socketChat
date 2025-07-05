@@ -128,7 +128,9 @@ client/
     │
     ├── App.js                      # Route management
     └── index.js                    # Entry point – ReactDOM, Redux Provider
+---
 
+---
 ## 🛠️ Deployment on Render
 
 ### 🌐 Backend (Render Web Service)
