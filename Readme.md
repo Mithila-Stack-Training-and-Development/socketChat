@@ -51,18 +51,83 @@ A **real-time full-stack chat application** with secure login, JWT-based authent
 
 ## 🧠 Project Structure (Simplified)
 
-/client
-├── redux/
-│ └── userSlice.js, messageSlice.js,socketSlice.js
-├── components/
-└── App.js
+---
 
-/server
-├── routes/
-├── controllers/
-├── middleware/
-├── models/
-└── index.js
+## 🏗️ Backend Project Structure
+
+```bash
+server/
+├── controllers/             # Business logic for handling requests
+│   ├── userController.js        # Handles user-related operations (login, register, etc.)
+│   └── messageController.js     # Handles message logic (send, fetch, etc.)
+│
+├── models/                 # Mongoose schemas for database collections
+│   ├── User.js                 # User schema with credentials & metadata
+│   ├── Message.js              # Chat message schema
+│   └── Connection.js           # Tracks user socket connections
+│
+├── routes/                 # Express route definitions
+│   ├── userRoutes.js           # /api/users
+│   └── messageRoutes.js        # /api/messages
+│
+├── socket/                 # All real-time socket logic
+│   └── socketHandler.js        # Socket.IO initialization and events
+│
+├── utilities/              # Custom utility functions
+│   ├── asyncHandler.js          # 🔁 Wrapper to avoid repetitive try-catch blocks
+│   └── errorHandler.js         # 🧨 Custom error class & reusable error logic
+│
+├── middlewares/            # Express middlewares
+│   ├── authMiddleware.js       # 🔐 JWT token verification (route protection)
+│   └── errorMiddleware.js      # 🚨 Global error catcher and formatter
+│
+├── db/                    # Database connection logic
+│   └── connectDB.js            # MongoDB Atlas connection setup
+│
+├── index.js               # 🧠 Entry point: sets up Express, MongoDB, and Socket.IO
+└── .env                   # 🔒 Environment variables (Mongo URI, JWT secret, etc.)
+
+---
+
+## 🖼️ Frontend Project Structure (`/client/src`)
+
+```bash
+client/
+└── src/
+    ├── components/                  # Reusable components and shared utilities
+    │   ├── ProtectedRoute.jsx           # 🔐 Wrapper to guard private routes
+    │   └── utils/
+    │       └── axiosInstance.js         # 🚀 Pre-configured Axios with JWT support
+    │
+    ├── pages/                      # Main route-based pages
+    │   ├── auth/                       # Authentication views
+    │   │   ├── Login.jsx
+    │   │   └── Signup.jsx
+    │   │
+    │   └── home/                       # Main chat UI
+    │       ├── Home.jsx
+    │       ├── UsersSidebar.jsx
+    │       ├── MessageContainer.jsx
+    │       ├── SendMessage.jsx
+    │       └── Message.jsx
+    │
+    ├── store/                      # 🔥 Redux Toolkit-based global state management
+    │   ├── store.js                    # Root Redux store config
+    │   └── slice/
+    │       ├── user/
+    │       │   ├── userSlice.js           # User state (auth, profile)
+    │       │   └── userThunk.js           # Async actions: login, register, fetch profile
+    │       │
+    │       ├── message/
+    │       │   ├── messageSlice.js        # Chat/message state
+    │       │   └── messageThunk.js        # Send and retrieve messages
+    │       │
+    │       └── socket/
+    │           ├── socketSlice.js         # Socket connection/presence
+    │           └── socketThunk.js         # (Optional) Future real-time actions
+    │
+    ├── App.js                      # Route management
+    └── index.js                    # Entry point – ReactDOM, Redux Provider
 
 ## 🛠️ Deployment on Render
 
@@ -139,6 +204,16 @@ This project helped me grow both technically and in how I approach full-stack de
 - Secure auth should never be an afterthought
 
 ---
+🔮 Future Updates (Planned)
+✅ Read / Delivered message status
+
+✅ Group chat functionality
+
+✅ Emoji & file sharing support
+
+✅ Improved message UI with timestamps
+
+✅ User online/offline indicators
 
 ---
 
@@ -175,3 +250,11 @@ cd server
 # Start server (dev mode)
 npm run dev
 
+## 👨‍💻 Author
+
+**Ankit — B.Tech CSE, 3rd Year**
+
+- 🔗 [LinkedIn](https://www.linkedin.com/in/ankit01kr/)
+- 💻 [GitHub](https://github.com/chaudharycoder)
+
+---
